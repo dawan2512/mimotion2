@@ -1,9 +1,11 @@
 # -*- coding: utf8 -*-
 # python >=3.8
 
-import requests,time,re,json,random
+import requests,time,re,json,random,sys
 
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+nowHour = time.localtime().tm_hour
+
 headers = {
         'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/20.6.18)'
         }
@@ -141,7 +143,11 @@ def push_wx(sckey, desp=""):
             print(f"[{now}] 推送失败：{json_data['errno']}({json_data['errmsg']})")
 
 if __name__ ==  "__main__":
-    # ServerChan
+    # if nowHour != 11 and nowHour != 17 and  nowHour != 20:
+    #     print('用户名和密码数量不对1')
+    #     sys.exit(0)
+    # print('用户名和密码数量不对2')
+# ServerChan
     sckey = input()
     if str(sckey) == '0':
         sckey = ''
@@ -150,7 +156,15 @@ if __name__ ==  "__main__":
     # 登录密码
     passwd = input()
     # 要修改的步数，直接输入想要修改的步数值，留空为随机步数
-    step = input()
+
+    if nowHour == 11:
+        step = '13000-15000'
+    elif nowHour == 16:
+        step = '13000-15000'
+    elif nowHour == 20:
+        step = '32000-34000'
+    else:
+        step = input()
 
     user_list = user.split('#')
     passwd_list = passwd.split('#')
@@ -167,4 +181,3 @@ if __name__ ==  "__main__":
         push_wx(sckey, push)
     else:
         print('用户名和密码数量不对')
-    
