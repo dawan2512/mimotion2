@@ -4,7 +4,7 @@
 import requests,time,re,json,random,sys
 
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-nowHour = time.localtime().tm_hour
+nowHour = time.localtime().tm_hour + 8
 
 headers = {
         'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/20.6.18)'
@@ -144,10 +144,9 @@ def push_wx(sckey, desp=""):
 
 if __name__ ==  "__main__":
     print('nowHour:' + str(nowHour))
-    # if nowHour != 11 and nowHour != 17 and  nowHour != 20:
-    #     print('用户名和密码数量不对1')
-    #     sys.exit(0)
-    # print('用户名和密码数量不对2')
+    if nowHour != 11 and nowHour != 17 and  nowHour != 20:
+        print('未到执行时间')
+        sys.exit(0)
 # ServerChan
     sckey = input()
     if str(sckey) == '0':
@@ -161,7 +160,7 @@ if __name__ ==  "__main__":
     if nowHour == 11:
         step = '13000-15000'
         print('1')
-    elif nowHour == 16:
+    elif nowHour == 17:
         step = '13000-15000'
         print('2')
     elif nowHour == 20:
