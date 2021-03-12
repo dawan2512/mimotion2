@@ -160,12 +160,16 @@ if __name__ ==  "__main__":
 
     if nowHour == 11:
         step = '13000-15000'
+        print('1')
     elif nowHour == 16:
         step = '13000-15000'
+        print('2')
     elif nowHour == 20:
         step = '32000-34000'
+        print('3')
     else:
         step = input()
+        print('4')
     print('step:' + step)
     user_list = user.split('#')
     passwd_list = passwd.split('#')
