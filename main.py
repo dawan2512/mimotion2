@@ -161,7 +161,7 @@ if __name__ ==  "__main__":
         step = '13000-15000'
         print('1')
     elif nowHour == 17:
-        step = '13000-15000'
+        step = '28000-31000'
         print('2')
     elif nowHour == 20:
         step = '32000-34000'
