@@ -143,7 +143,7 @@ def push_wx(sckey, desp=""):
             print(f"[{now}] 推送失败：{json_data['errno']}({json_data['errmsg']})")
 
 if __name__ ==  "__main__":
-    print('nowHour:' + nowHour)
+    print('nowHour:' + str(nowHour))
     # if nowHour != 11 and nowHour != 17 and  nowHour != 20:
     #     print('用户名和密码数量不对1')
     #     sys.exit(0)
@@ -166,7 +166,7 @@ if __name__ ==  "__main__":
         step = '32000-34000'
     else:
         step = input()
-
+    print('step:' + step)
     user_list = user.split('#')
     passwd_list = passwd.split('#')
     setp_array = step.split('-')
