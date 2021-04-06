@@ -161,10 +161,10 @@ if __name__ ==  "__main__":
         step = '13000-15000'
         print('1')
     elif nowHour == 17:
-        step = '20000-22000'
+        step = '28000-31000'
         print('2')
     elif nowHour == 20:
-        step = '26000-27000'
+        step = '32000-34000'
         print('3')
     else:
         step = input()
