@@ -157,10 +157,10 @@ if __name__ ==  "__main__":
     passwd = input()
     # 要修改的步数，直接输入想要修改的步数值，留空为随机步数
 
-    if nowHour == 11:
+    if nowHour == 111:
         step = '8000-9000'
         print('1')
-    elif nowHour == 17:
+    elif nowHour == 171:
         step = '15000-16000'
         print('2')
     elif nowHour == 20:
